@@ -1,0 +1,14 @@
+---
+- name: add backports repo
+  sudo: true
+  apt_repository: repo='deb http://ftp.debian.org/debian wheezy-backports main' state=present update_cache=yes
+
+- name: install nodejs
+  sudo: true
+  apt: pkg={{item}} default_release=wheezy-backports
+  with_items:
+    - nodejs
+    - nodejs-legacy
+
+- name: install and get npm
+  shell: curl https://npmjs.org/install.sh | sudo sh
