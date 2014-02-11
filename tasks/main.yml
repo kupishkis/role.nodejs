@@ -11,4 +11,4 @@
     - nodejs-legacy
 
 - name: install and get npm
-  shell: curl https://npmjs.org/install.sh | sudo sh
+  shell: curl https://www.npmjs.org/install.sh | sudo sh
